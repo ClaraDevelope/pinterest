@@ -42,8 +42,6 @@ export async function createValueCardSection(data, API_URL) {
   }
 }
 
-// createCardSection()
-
 // export const createValueCardSection = (data, API_URL) => {
 //   const app = document.querySelector('#app')
 //   app.innerHTML = ''

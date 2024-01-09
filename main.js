@@ -8,18 +8,32 @@ createCardSection()
 
 async function CallApi(inputValue) {
   console.log(inputValue)
-  const accessKey = '_VtxJJpqoAQc1RM-7y5fAouBNFTC22E4hVglMeLAOKg'
-  const API_URL = `https://api.unsplash.com/search/photos?query=${inputValue}&client_id=${accessKey}`
+  const USER_KEY = '_VtxJJpqoAQc1RM-7y5fAouBNFTC22E4hVglMeLAOKg'
+  const API_URL = `https://api.unsplash.com/search/photos?query=${inputValue}&client_id=${USER_KEY}`
   try {
     const response = await fetch(API_URL)
     const data = await response.json()
     console.log(data)
-    createValueCardSection(data, API_URL)
-    // drawCard(data, parent);
+    const app = document.querySelector('#app')
+    const cardSection = document.createElement('section')
+    cardSection.className = 'cardSection'
+    if (data && data.results && data.results.length > 0) {
+      const cardSection = document.querySelector('.cardSection')
+      cardSection.innerHTML = ''
+      data.results.forEach((item) => {
+        // console.log(item)
+        drawCard(item, cardSection)
+      })
+      app.append(cardSection)
+    } else {
+      console.log('Data is empty or not defined:', data)
+    }
+    // createValueCardSection(data, API_URL)
   } catch (error) {
     console.log('Error al obtener los datos de la API', error)
   }
 }
+
 const handleKeyDown = (event) => {
   if (event.key === 'Enter') {
     const inputValue = event.target.value
@@ -29,19 +43,3 @@ const handleKeyDown = (event) => {
 
 const searchInput = document.querySelector('#searchBar')
 searchInput.addEventListener('keydown', handleKeyDown)
-
-// const CallApi = (inputValue) => {
-//   console.log(inputValue)
-//   const accessKey = 'g6eFRes8Scdf-v3-7NskAUI3a6ia-iN19f53RynwFy8'
-//   const API_URL = `https://api.unsplash.com/search/photos?query=${inputValue}&client_id=${accessKey}`
-//   fetch(API_URL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data)
-//       createValueCardSection(data, API_URL)
-//       // drawCard(data, parent)
-//     })
-//     .catch((error) => {
-//       console.log('Error al obtener los datos de la API', error)
-//     })
-// }
