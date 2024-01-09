@@ -13,7 +13,7 @@ export const createCardSection = (data) => {
   fetch(API_URL)
     .then((res) => res.json())
     .then((data) => {
-      data.forEach((item) => {
+      data.map((item) => {
         // console.log(item)
         drawCard(item, cardSection)
       })
