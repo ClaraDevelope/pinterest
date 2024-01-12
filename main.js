@@ -1,10 +1,9 @@
 import './style.css'
-import { navbar } from './src/components/navbar/navbar.js'
 import { createCardSection } from './src/components/imagesSection/images.js'
 import { drawCard } from './src/components/cards/cards.js'
 import { createButton } from './src/components/button/button.js'
 import { createFooter } from './src/components/footer/footer.js'
-createFooter
+import { navbar } from './src/components/navBar/navbar.js'
 
 createCardSection()
 let totalImages = 0
