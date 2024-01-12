@@ -1,8 +1,12 @@
 .cardSection {
-  position: static;
   max-width: 95%;
-  margin: 0;
+  margin: 15px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
 }

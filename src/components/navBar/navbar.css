@@ -18,6 +18,8 @@
 }
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 button {
   background-color: white;
@@ -70,7 +72,6 @@ button {
 .button > * {
   width: 30px;
   margin-top: 12px;
-  /* padding: 5px; */
 }
 
 #perfilImg {
@@ -83,14 +84,15 @@ button {
   border-radius: 20px;
   background-color: var(--grey-primary);
 }
+
 .notifications {
   font-size: var(--font-size-M);
   background-color: var(--button-primary);
   color: var(--grey-secondary);
-  padding: 8px;
+  padding: 10px;
   border-radius: 8px;
   position: relative;
-  right: 2rem;
+  right: 3rem;
 }
 #messages {
   right: 20px;
@@ -100,7 +102,20 @@ button {
   right: 8px;
 }
 #options {
-  width: 160%;
+  width: 250%;
   right: 15px;
   top: 0;
+  right: 1.5rem;
+}
+
+@media (max-width: 770px) {
+  #first-div {
+    display: none;
+  }
+  #seconDiv {
+    width: 100px;
+  }
+  .button > * {
+    width: 1rem;
+  }
 }

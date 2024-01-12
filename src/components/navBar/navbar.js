@@ -4,6 +4,7 @@ export const navbar = document.createElement('nav')
 navbar.className = 'navbar'
 const firstDiv = document.createElement('div')
 firstDiv.className = 'nav-div'
+firstDiv.id = 'first-div'
 const pinterestButton = document.createElement('button')
 const pinterestImage = document.createElement('img')
 pinterestImage.className = 'image-button-s'
